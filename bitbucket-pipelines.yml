@@ -12,6 +12,7 @@ pipelines:
   default:
     - step:
         script:
+          - export DATABASE_URL=postgresql://root:root@localhost/scl-pipelines_test
           - gem install bundler
           - bundle install
           - bundle exec rails db:create
@@ -36,6 +37,6 @@ definitions:
     postgres:
       image: postgres
       environment:
-        POSTGRES_DB: 'scl-pipelines_test'
-        POSTGRES_USER: 'root'
-        POSTGRES_PASSWORD: 'root'
+        POSTGRES_DB: scl-pipelines_test
+        POSTGRES_USER: root
+        POSTGRES_PASSWORD: root
