@@ -14,7 +14,6 @@ pipelines:
         script:
           - gem install bundler
           - bundle install
-          - gem install therubyracer
           - bundle exec cucumber
     - step:
         caches:
