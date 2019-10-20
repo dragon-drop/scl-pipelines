@@ -14,7 +14,7 @@ pipelines:
         script:
           - export DATABASE_URL=postgresql://root:root@localhost/scl-pipelines_test
           - gem install bundler
-          - bundle install
+          - bundle install --path vendor
           - bundle exec rails db:create
           - bundle exec rails db:test:prepare
           - bundle exec cucumber
