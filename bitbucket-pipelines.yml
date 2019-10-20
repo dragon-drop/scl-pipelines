@@ -14,12 +14,14 @@ pipelines:
         script:
           - gem install bundler
           - bundle install
+          - bundle exec rails db:create
+          - bundle exec rails db:test:prepare
           - bundle exec cucumber
         services:
           - postgres
-    - step:
         caches:
           - bundler
+    - step:
         script: # Modify the commands below to build your repository.
           # gem install bundler
           # bundle install
@@ -36,4 +38,4 @@ definitions:
       environment:
         POSTGRES_DB: 'scl-pipelines_test'
         POSTGRES_USER: 'root'
-        POSTGRES_PASSWORD: 'password'
+        POSTGRES_PASSWORD: 'root'
