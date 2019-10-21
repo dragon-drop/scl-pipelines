@@ -3,7 +3,10 @@
     "test": {
       "scripts": {
         "test": "bundle exec cucumber"
-      }
+      },
+      "addons": [
+        "heroku-postgresql:in-dyno"
+      ]
     }
   }
 }
